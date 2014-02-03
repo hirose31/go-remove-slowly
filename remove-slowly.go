@@ -4,6 +4,7 @@ import(
 	"fmt"
 	"os"
 	"flag"
+	"time"
 )
 
 const TruncateSize int64 = 1024 * 1024 * 128
@@ -45,6 +46,7 @@ func main() {
 				fmt.Println(fn, err);
 				continue
 			}
+			time.Sleep(1 * time.Second)
 			n--
 		}
 		if err := os.Remove(fn); err != nil {
